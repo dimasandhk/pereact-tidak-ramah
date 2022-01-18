@@ -1,5 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+
+const words = require("./data.json");
 require("dotenv").config();
 
 client.on("ready", () => {
@@ -11,7 +13,8 @@ client.on("ready", () => {
 
 client.on("message", (msg) => {
 	const content = msg.content.toLowerCase();
-	if (content.includes("ajg")) {
+	const containTidakRamah = words.some((w) => content.includes(w));
+	if (containTidakRamah) {
 		msg.react("⭐");
 	}
 });
