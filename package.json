@@ -1,10 +1,16 @@
 {
 	"name": "pereact-tidak-ramah",
 	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
+	"description": "Bot that filter out a word that contains inappropriate harsh words",
+	"main": "main.js",
 	"scripts": {
-		"watch": "nodemon main"
+		"watch": "nodemon main.js",
+		"start": "node main.js",
+		"node .": "node run main.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dimasandhk/pereact-tidak-ramah.git"
 	},
 	"author": "Dimas Andhika Diputra",
 	"license": "ISC",
