@@ -22,7 +22,8 @@ client.on("message", (msg) => {
 		}
 	});
 
-	if (containTidakRamah && content[index - 1] == " ") {
+	const spaceBefore = content[index - 1] == " " || !content[index - 1];
+	if (containTidakRamah && spaceBefore) {
 		msg.react("⭐");
 	}
 });
