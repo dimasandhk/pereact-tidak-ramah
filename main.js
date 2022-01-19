@@ -14,7 +14,15 @@ client.on("ready", () => {
 client.on("message", (msg) => {
 	const content = msg.content.toLowerCase();
 	const containTidakRamah = words.some((w) => content.includes(w));
-	if (containTidakRamah) {
+
+	let index;
+	words.forEach((w) => {
+		if (content.indexOf(w) > 0) {
+			index = content.indexOf(w);
+		}
+	});
+
+	if (containTidakRamah && content[index - 1] == " ") {
 		msg.react("⭐");
 	}
 });
